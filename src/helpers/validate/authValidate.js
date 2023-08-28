@@ -7,7 +7,7 @@ const validationAuthSignUp = yup.object().shape({
   name: yup.string().required("Введите имя! Это обязательное поле!"),
   password: yup
     .string()
-    .min(6, "Пароль должен быть больше шести символов!")
+    .min(5, "Пароль должен быть больше пяти символов!")
     .max("100")
     .required("Введите пароль! Это обязательное поле!"),
   confirmPassword: yup
@@ -16,4 +16,15 @@ const validationAuthSignUp = yup.object().shape({
     .required("Подтвердите пароль!"),
 });
 
-export { validationAuthSignUp };
+const validationAuthSignIn = yup.object().shape({
+  email: yup
+    .string()
+    .required("Заполните электронный адрес! Это обязательное поле!"),
+  password: yup
+    .string()
+    .min(5, "Пароль должен быть больше пяти символов!")
+    .max("100")
+    .required("Введите пароль! Это обязательное поле!"),
+});
+
+export { validationAuthSignUp, validationAuthSignIn };

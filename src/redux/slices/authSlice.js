@@ -6,7 +6,19 @@ import { toast } from "react-toastify";
 const signUp = createAsyncThunk("auth/signUp", async (data) => {
   try {
     const response = await axios.post(`${BASE_URL}auth/signUp`, data);
-    localStorage.setItem("userData", JSON.stringify(response.data));
+    localStorage.setItem("clientData", JSON.stringify(response.data));
+    toast.success("Вы успешно зарегистрировались!");
+    return response.data;
+  } catch (error) {
+    toast.error(error.message);
+    return error.message;
+  }
+});
+
+const signIn = createAsyncThunk("auth/signIn", async (data) => {
+  try {
+    const response = await axios.post(`${BASE_URL}auth/signIn`, data);
+    localStorage.setItem("clientData", JSON.stringify(response.data));
     toast.success("Вы успешно зарегистрировались!");
     return response.data;
   } catch (error) {
@@ -22,7 +34,12 @@ const authSlice = createSlice({
     isAuthorized: false,
     data: {},
   },
-  reducers: {},
+  reducers: {
+    autoLogin: (state, { payload }) => {
+      state.isAuthorized = true;
+      state.data = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(signUp.pending, (state) => {
@@ -37,8 +54,23 @@ const authSlice = createSlice({
       })
       .addCase(signUp.rejected, (state) => {
         state.isLoading = false;
+      })
+      .addCase(signIn.pending, (state) => {
+        state.isLoading = true;
+      })
+      .addCase(signIn.fulfilled, (state, { payload }) => {
+        state.isLoading = false;
+        state.isAuthorized = true;
+        if (typeof payload !== "string") {
+          state.data = payload;
+        }
+      })
+      .addCase(signIn.rejected, (state) => {
+        state.isLoading = false;
       });
   },
 });
 
-export { authSlice, signUp };
+export const authActions = authSlice.actions;
+
+export { authSlice, signUp, signIn };
