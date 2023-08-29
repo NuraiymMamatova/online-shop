@@ -6,7 +6,7 @@ export const PrivateAuthRoute = ({
   fallbackPath,
 }) => {
   if (isAuthorized) {
-    return <RouteComponent />;
+    return RouteComponent;
   }
   return <Navigate to={fallbackPath} replace />;
 };
