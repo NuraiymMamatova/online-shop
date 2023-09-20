@@ -14,6 +14,9 @@ const StyledButton = styled(MUIButton)({
   padding: 10,
   color: "#fff",
   "&:hover": {
-    backgroundColor: "#2a2b2d"
-  }
+    backgroundColor: "#2a2b2d",
+  },
+  "&:disabled": {
+    backgroundColor: "#5a5a5a",
+  },
 });
