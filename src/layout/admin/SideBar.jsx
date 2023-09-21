@@ -37,13 +37,17 @@ export const SideBar = () => {
   );
 };
 
+const Wrapper = styled("div")`
+  padding: 40px 20px 0 20px;
+`;
+
 const Container = styled("aside")`
   position: fixed;
   left: 0;
+  top: 0;
   width: 218px;
   background-color: red;
   height: 100vh;
-  top: 0;
 `;
 
 const List = styled("ul")`
@@ -70,8 +74,4 @@ const MenuTitle = styled("span")`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-`;
-
-const Wrapper = styled("div")`
-  padding: 40px 20px 0 20px;
 `;

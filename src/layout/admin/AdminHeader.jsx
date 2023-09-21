@@ -27,4 +27,6 @@ const Title = styled("h1")`
 
 const HeaderButton = styled(Button)`
   min-width: 120px;
+  border-radius: 10px;
+  background-color: #121314;
 `;
