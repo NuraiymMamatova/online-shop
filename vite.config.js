@@ -10,5 +10,5 @@ export default defineConfig({
       svgrOptions: {},
     }),
   ],
-  base: "/vite-deploy-demo/",
+  base: "/online-shop/",
 });
