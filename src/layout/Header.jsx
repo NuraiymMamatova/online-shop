@@ -1,8 +1,8 @@
 import styled from "@emotion/styled";
 import { ReactComponent as Logo } from "../assets/logo.svg";
+import { ReactComponent as Login } from "../assets/login.svg";
 import { ReactComponent as Favorite } from "../assets/favorite.svg";
 import { ReactComponent as Card } from "../assets/card.svg";
-import { ReactComponent as Icon } from "../assets/login.svg";
 
 export const Header = () => {
   return (
@@ -10,16 +10,16 @@ export const Header = () => {
       <Logo />
       <Options>
         <OptionsBlock>
-          <Icon />
-          Войти
+          <Login />
+          <div>Войти</div>
         </OptionsBlock>
         <OptionsBlock>
           <Favorite />
-          Избранные
+          <div>Избранные</div>
         </OptionsBlock>
         <OptionsBlock>
           <Card />
-          Корзина
+          <div>Корзина</div>
         </OptionsBlock>
       </Options>
     </StyledHeader>

@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 import { Outlet } from "react-router-dom";
-import { Footer } from "../layout/Footer"
-import { Header } from "../layout/Header";
 
 export const MainLayout = () => {
   return (
@@ -16,7 +16,7 @@ export const MainLayout = () => {
 };
 
 const Content = styled("div")`
+  margin-top: 20px;
   margin-right: 120px;
   margin-left: 120px;
-  margin-top: 20px;
 `;
