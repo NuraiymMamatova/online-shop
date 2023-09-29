@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
-import { AdminHeader } from "../admin/AdminHeader";
-import { ContentContainer } from "../admin/ContentContainer";
-import { SideBar } from "../admin/SideBar";
-import styled from "@emotion/styled";
+import { AdminHeader } from "../Admin/AdminHeader";
+import { ContentContainer } from "../Admin/ContentContainer";
+import { SideBar } from "../Admin/SideBar";
+import { styled } from "@mui/material";
 
 export const AdminLayout = () => {
   return (

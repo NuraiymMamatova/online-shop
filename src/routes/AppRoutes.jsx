@@ -1,15 +1,18 @@
 import { Navigate, Route, Routes } from "react-router-dom";
-import { SignInForm } from "../components/authForm/SignInForm";
-import { SignUpForm } from "../components/authForm/SignUpForm";
 import { MainLayout } from "../layout/RouteWrapper/MainLayout";
+import { SignUpForm } from "../components/AuthForm/SignUpForm";
+import { SignInForm } from "../components/AuthForm/SignInForm";
+import { PrivateAuthRoute } from "./Private/PrivateAuthRoute";
 import { AdminRoutes } from "./AdminRoutes";
-import { PrivateAuthRoute } from "./private/PrivateAuthRoute";
 
 export const AppRoutes = ({ isAuthorized, role }) => {
-  const pahtsByRole = {
+  console.log(role);
+
+  const pathsByRole = {
     ADMIN: "/admin",
     CLIENT: "/client",
   };
+
   return (
     <Routes>
       <Route path="/" element={<MainLayout />}>
@@ -19,7 +22,7 @@ export const AppRoutes = ({ isAuthorized, role }) => {
           element={
             <PrivateAuthRoute
               RouteComponent={<SignUpForm />}
-              fallbackPath={pahtsByRole[role]}
+              fallbackPath={pathsByRole[role]}
               isAuthorized={!isAuthorized}
             />
           }
@@ -29,7 +32,7 @@ export const AppRoutes = ({ isAuthorized, role }) => {
           element={
             <PrivateAuthRoute
               RouteComponent={<SignInForm />}
-              fallbackPath={pahtsByRole[role]}
+              fallbackPath={pathsByRole[role]}
               isAuthorized={!isAuthorized}
             />
           }
@@ -46,7 +49,7 @@ export const AppRoutes = ({ isAuthorized, role }) => {
         }
       />
       <Route path="/client/*" element={<h1>Client Page</h1>} />
-      <Route path="*" element={<h1>Not found!</h1>} />
+      <Route path="*" element={<h1>Not Found</h1>} />
     </Routes>
   );
 };

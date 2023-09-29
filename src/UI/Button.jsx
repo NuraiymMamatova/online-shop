@@ -1,22 +1,22 @@
-import { CircularProgress, Button as MUIButton, styled } from "@mui/material";
+import { CircularProgress, Button as MuiButton, styled } from "@mui/material";
 
-export const Button = ({ children, onClick, loading, disabled, ...rest }) => {
+export const Button = ({ children, onClick, disabled, loading, ...rest }) => {
   return (
-    <StyledButton onClick={onClick} {...rest} disabled={disabled || loading}>
-      {loading ? <CircularProgress sx={{ color: "#fff" }} /> : children}
+    <StyledButton disabled={disabled || loading} onClick={onClick} {...rest}>
+      {loading ? <CircularProgress sx={{ color: "white" }} /> : children}
     </StyledButton>
   );
 };
 
-const StyledButton = styled(MUIButton)({
+const StyledButton = styled(MuiButton)({
   minWidth: "408px",
   backgroundColor: "#121314",
   padding: 10,
-  color: "#fff",
+  color: "white",
   "&:hover": {
     backgroundColor: "#2a2b2d",
   },
   "&:disabled": {
-    backgroundColor: "#5a5a5a",
+    backgroundColor: "#808285",
   },
 });

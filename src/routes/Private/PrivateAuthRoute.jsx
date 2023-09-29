@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-export const PrivateAuthRoute = ({
+export const PrivateAuthRoute = ({ 
   RouteComponent,
   isAuthorized,
   fallbackPath,
@@ -8,5 +8,6 @@ export const PrivateAuthRoute = ({
   if (isAuthorized) {
     return RouteComponent;
   }
+
   return <Navigate to={fallbackPath} replace />;
 };

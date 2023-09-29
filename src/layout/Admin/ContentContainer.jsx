@@ -1,11 +1,11 @@
 import { styled } from "@mui/material";
 
 export const ContentContainer = ({ children }) => {
-  return <StyledContentContainer>{children}</StyledContentContainer>;
+  return <StyledContainer>{children}</StyledContainer>;
 };
 
-const StyledContentContainer = styled("div")`
+const StyledContainer = styled("div")`
+  margin-top: 25px;
   margin-left: 30px;
   margin-right: 30px;
-  margin-top: 30px;
 `;

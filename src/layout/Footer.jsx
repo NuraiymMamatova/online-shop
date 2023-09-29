@@ -2,25 +2,25 @@ import styled from "@emotion/styled";
 
 export const Footer = () => {
   return (
-    <StyledFooter>
+    <FooterStyled>
       <Wrapper>
         <InfoContainer>
           <h2>BRANDNAME</h2>
           <InfoBlock>
-            <p>О нас</p>
-            <p>Контакты</p>
+            <p>О нас </p>
+            <p>Контакты </p>
           </InfoBlock>
           <InfoBlock>
-            <p>Способ оплаты</p>
-            <p>Условия доставки</p>
+            <p>Способы оплаты </p>
+            <p>Условия доставки </p>
           </InfoBlock>
           <InfoBlock>
-            <p>Пользовательское соглашение</p>
+            <p>Пользовательское соглашение </p>
             <p>Политика конфиденциальности</p>
           </InfoBlock>
         </InfoContainer>
       </Wrapper>
-      <div>brandname.com 2023 Все права защищены</div>
+      <p>brandname.com 2023 Все права защищены</p>
       <LogoBox>
         <FirstBlock>
           <Logo>Onlineshop</Logo>
@@ -32,11 +32,11 @@ export const Footer = () => {
           <Logo>Onlineshop</Logo>
         </SecondBlock>
       </LogoBox>
-    </StyledFooter>
+    </FooterStyled>
   );
 };
 
-const StyledFooter = styled("footer")`
+const FooterStyled = styled("footer")`
   text-align: center;
 `;
 
@@ -62,17 +62,17 @@ const InfoBlock = styled("div")`
   justify-content: space-between;
   flex-direction: column;
   align-items: center;
-  & :first-of-type {
+  & :first-child {
     margin-bottom: 16px;
   }
 `;
 
 const LogoBox = styled("div")`
+  border-top: 4px solid #2e2e2e;
   display: flex;
   margin-top: 20px;
   background-color: red;
   height: 82px;
-  border-top: 4px solid #2e2e2e;
 `;
 
 const FirstBlock = styled("div")`
@@ -97,7 +97,7 @@ const SecondBlock = styled("div")`
 
 const Logo = styled("span")`
   font-size: 18px;
-  font-weight: 800;
+  font-weight: 700;
   line-height: 18px;
   text-transform: uppercase;
 `;

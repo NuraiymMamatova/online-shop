@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom";
 
-export const PrivateAuthRouteByRole = ({
+export const PrivateAuthRouteByRole = ({ // HOC
   RouteComponent,
-  role /* login role */,
-  roles = [] /* [ADMIN, CLIENT] */,
+  role, // login role // CLIENT
+  roles = [], // ["ADMIN"] ADMIN === CLIENT
   fallbackPath,
 }) => {
   if (roles.includes(role)) {
